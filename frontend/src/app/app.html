@@ -1,0 +1,75 @@
+<div class="page">
+  <header class="header">
+    <div class="logo">🌾</div>
+
+    <div>
+      <h1>Sugarcane Farmer Management</h1>
+      <p>AI-powered farmer records and payment assistant</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="welcome">
+      <h2>Farmer AI Assistant</h2>
+
+      <p>
+        Ask questions about farmer records, sugarcane supply,
+        and pending payments.
+      </p>
+    </section>
+
+    <section class="chat-card">
+      <label for="question">Ask your question</label>
+
+      <textarea
+        id="question"
+        [(ngModel)]="question"
+        placeholder="Example: Which farmers have pending payments?"
+        rows="4"
+        (keydown.enter)="onEnter($event)">
+      </textarea>
+
+      <div class="examples">
+        <p>Try asking:</p>
+
+        <button
+          type="button"
+          (click)="useQuestion('Show all farmers')">
+          Show all farmers
+        </button>
+
+        <button
+          type="button"
+          (click)="useQuestion('Which farmers have pending payments?')">
+          Pending payments
+        </button>
+
+        <button
+          type="button"
+          (click)="useQuestion('Give me a summary of farmer payments')">
+          Payment summary
+        </button>
+      </div>
+
+      <button
+        class="ask-button"
+        type="button"
+        [disabled]="loading || !question.trim()"
+        (click)="askQuestion()">
+
+        {{ loading ? 'Processing...' : 'Ask AI →' }}
+      </button>
+
+      <p class="error" *ngIf="error">{{ error }}</p>
+    </section>
+
+    <section class="answer-card" *ngIf="answer">
+      <h3>🤖 AI Response</h3>
+      <p class="answer">{{ answer }}</p>
+    </section>
+
+    <footer>
+      Powered by Angular, OpenAI, MCP and PostgreSQL
+    </footer>
+  </main>
+</div>

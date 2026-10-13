@@ -1,0 +1,173 @@
+:host {
+  display: block;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+  color: #183b2b;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.page {
+  min-height: 100vh;
+  background: #f3f7f2;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 24px 8%;
+  background: #174d35;
+  color: white;
+}
+
+.logo {
+  font-size: 38px;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 25px;
+}
+
+.header p {
+  margin: 7px 0 0;
+  color: #d4e9dc;
+}
+
+.container {
+  max-width: 850px;
+  margin: 45px auto;
+  padding: 0 20px;
+}
+
+.welcome {
+  margin-bottom: 25px;
+}
+
+.welcome h2 {
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+
+.welcome p {
+  color: #607166;
+  line-height: 1.6;
+}
+
+.chat-card,
+.answer-card {
+  background: white;
+  padding: 28px;
+  border-radius: 16px;
+  border: 1px solid #e0e9e1;
+  box-shadow: 0 8px 25px #173c2610;
+  margin-bottom: 22px;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 12px;
+}
+
+textarea {
+  width: 100%;
+  resize: vertical;
+  padding: 15px;
+  border: 1px solid #ccd9ce;
+  border-radius: 10px;
+  font: inherit;
+  outline: none;
+}
+
+textarea:focus {
+  border-color: #278452;
+  box-shadow: 0 0 0 3px #27845218;
+}
+
+.examples {
+  margin: 20px 0;
+}
+
+.examples p {
+  font-size: 14px;
+  color: #607166;
+}
+
+.examples button {
+  background: #edf5ee;
+  border: 1px solid #d7e6d9;
+  border-radius: 20px;
+  padding: 9px 13px;
+  margin: 5px 5px 5px 0;
+  cursor: pointer;
+}
+
+.examples button:hover {
+  background: #dcefe0;
+}
+
+.ask-button {
+  width: 100%;
+  padding: 14px;
+  background: #21834d;
+  color: white;
+  border: none;
+  border-radius: 9px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.ask-button:hover {
+  background: #17683c;
+}
+
+.ask-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.answer-card h3 {
+  margin-top: 0;
+  color: #21834d;
+}
+
+.answer {
+  white-space: pre-wrap;
+  line-height: 1.8;
+}
+
+.error {
+  color: #bd2929;
+  margin-top: 15px;
+}
+
+footer {
+  text-align: center;
+  color: #77877c;
+  padding: 25px 0;
+  font-size: 13px;
+}
+
+@media (max-width: 600px) {
+  .header {
+    padding: 20px;
+  }
+
+  .header h1 {
+    font-size: 19px;
+  }
+
+  .container {
+    margin-top: 25px;
+  }
+
+  .chat-card,
+  .answer-card {
+    padding: 20px;
+  }
+}
